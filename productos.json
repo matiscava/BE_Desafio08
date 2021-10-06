@@ -1,0 +1,32 @@
+[
+  {
+    "title": "caramelo media hora",
+    "price": 5,
+    "thumbnail": "https://vinomanos.com/wp-content/uploads/2020/08/bazaart7-4-600x600-1.png",
+    "id": 1
+  },
+  {
+    "title": "Pico Dulce",
+    "price": 20,
+    "thumbnail": "https://almacencooperativo.com.ar/wp-content/uploads/2020/11/picodulce.jpg",
+    "id": 2
+  },
+  {
+    "title": "Chocolate Jack",
+    "price": 45,
+    "thumbnail": "http://d3ugyf2ht6aenh.cloudfront.net/stores/135/794/products/d_nq_np_665301-mla25956161225_092017-o1-f7e3f3d35fbf9f9e9016001697986976-640-0.jpg",
+    "id": 3
+  },
+  {
+    "title": "Naranju",
+    "price": 50,
+    "thumbnail": "https://cotillongonic.com.ar/wp-content/uploads/2020/10/NARANJUGONIC.jpg",
+    "id": 4
+  },
+  {
+    "title": "Tubby 4",
+    "price": "150",
+    "thumbnail": "https://pbs.twimg.com/media/DhTqqNtXkAU_jbn.jpg",
+    "id": 5
+  }
+]
