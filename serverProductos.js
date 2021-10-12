@@ -14,27 +14,34 @@ const producto1 = {
 }
 
 
-productosRouter.get('/', (req,res)=>{   
-    res.send(productos.getAll())
+productosRouter.get('/', async (req,res)=>{   
+    const productsList = await productos.getAll()
+    res.json(productsList)
 });
 
-productosRouter.post('/', (req,res)=>{
-    productos.save(req.body);
+productosRouter.post('/', async (req,res)=>{
+    const objetoNuevo = req.body
+    await productos.save(objetoNuevo);
     res.send('Se ha cargado un nuevo producto');
 })
 
-productosRouter.delete('/:id',(req,res)=>{
+productosRouter.delete('/:id', async (req,res)=>{
     findID = parseInt(req.params.id);
-    productos.deleteById(findID)
-    res.send('Se ha eleiminado el producto', productos.getAll());
+    console.log(findID);
+    await productos.deleteById(findID)
+    const productsList = await productos.getAll()
+
+    res.send({
+        message: 'Se ha eleiminado el producto',
+        data: productsList
+    });
 
 })
 
-productosRouter.get('/:id', (req,res)=>{   
+productosRouter.get('/:id', async (req,res)=>{   
     findID = parseInt(req.params.id);
-    const findObjeto = productos.getById(findID)
-    
-    res.send(findObjeto);
+    const findObjeto = await productos.getById(findID)
+    res.json(findObjeto);
 });
 productosRouter.put('/:id', async (req,res)=>{   
     findID = parseInt(req.params.id);

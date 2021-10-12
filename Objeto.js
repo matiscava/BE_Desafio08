@@ -1,16 +1,16 @@
+const fs = require('fs');
 module.exports = class ObjetoFS {
 
     constructor ( archivo ) {
         this.archivo = archivo;
     }
-    async getAll(){
-        const fs = require('fs');
-        const data = await fs.readFileSync(this.archivo);
+    async getAll(){ 
+        const data = await fs.promises.readFile(`./${this.archivo}` );
         const objeto = JSON.parse(data);
         return objeto;
     }
-    getById (idNum) {
-        const objeto = this.getAll()
+    async getById (idNum) {
+        const objeto = await this.getAll()
         const objetoFiltrado = objeto.filter(obj => obj.id === idNum);
         if (objetoFiltrado[0]===undefined) {
          return {error: 'objeto no encontrado'}
@@ -19,9 +19,7 @@ module.exports = class ObjetoFS {
         }        
     }
     async save(objetoNuevo){
-        const fs = require('fs');
-        const data = await fs.readFileSync(this.archivo);
-        const objeto = JSON.parse(data);
+        const objeto = await this.getAll();
         let nextID = 1
         let agregarData;
         if(objeto.length===0){
@@ -37,19 +35,17 @@ module.exports = class ObjetoFS {
         console.log(agregarData);
         objeto.push(agregarData);
         const dataToJSON = JSON.stringify(objeto,null,2);
-        fs.writeFileSync(this.archivo, dataToJSON);
+        fs.writeFileSync(`./${this.archivo}` , dataToJSON);
     }
     async deleteById(idNum){
-        const fs = require('fs');
-        const data = await fs.readFileSync(this.archivo);
-        const objeto = JSON.parse(data);
+        const objeto = await this.getAll();
+
         const objetoFiltrado = objeto.filter(obj => obj.id !== idNum);
         const dataToJSON = JSON.stringify(objetoFiltrado,null,2);
-        fs.writeFileSync(this.archivo, dataToJSON);
+        fs.writeFileSync(`./${this.archivo}` , dataToJSON);
     }
     async update(id,elemento){
-        const fs = require('fs');
-        const data = await fs.readFileSync(this.archivo);
+        const data = await fs.promises.readFile(`./${this.archivo}` );
         const lista = JSON.parse(data);
         const elementoGuardado = lista.find((obj)=> obj.id === id)
         const elementoIndex = lista.findIndex((obj)=> obj.id === id)
@@ -63,7 +59,7 @@ module.exports = class ObjetoFS {
         }
         lista.splice(elementoIndex,1,elementoSubido)
         const dataToJSON = await JSON.stringify(lista,null,2);
-        fs.writeFileSync(this.archivo, dataToJSON);
+        fs.writeFileSync(`./${this.archivo}` , dataToJSON);
 
         return elementoSubido;
     }

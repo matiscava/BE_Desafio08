@@ -28,5 +28,11 @@
     "price": "150",
     "thumbnail": "https://pbs.twimg.com/media/DhTqqNtXkAU_jbn.jpg",
     "id": 5
+  },
+  {
+    "title": "Chupelatin",
+    "price": 500,
+    "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_697980-MLA42179185856_062020-O.jpg",
+    "id": 6
   }
 ]
