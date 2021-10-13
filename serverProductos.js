@@ -7,11 +7,11 @@ const productos= new ObjetoFS('./productos.json');
 
 const PORT = 8080;
 
-const producto1 = {
-    title: 'Chocolate Jack',
-    price: 45,
-    thumbnail: 'http://d3ugyf2ht6aenh.cloudfront.net/stores/135/794/products/d_nq_np_665301-mla25956161225_092017-o1-f7e3f3d35fbf9f9e9016001697986976-640-0.jpg'
-}
+// const producto1 = {
+//     title: 'Chocolate Jack',
+//     price: 45,
+//     thumbnail: 'http://d3ugyf2ht6aenh.cloudfront.net/stores/135/794/products/d_nq_np_665301-mla25956161225_092017-o1-f7e3f3d35fbf9f9e9016001697986976-640-0.jpg'
+// }
 
 
 productosRouter.get('/', async (req,res)=>{   
