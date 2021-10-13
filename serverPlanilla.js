@@ -31,7 +31,6 @@ planillasRouter.get('/productos/:id', async (req,res)=>{
     const findID = parseInt(req.params.id);
     const producto = await productos.getById(findID)
     const titulo = 'Vista de Producto';
-    console.log(producto);
     // res.render('./product.pug', {productsList: producto,titulo})
     res.render('./pages/product.ejs', {productsList: producto,titulo})
 

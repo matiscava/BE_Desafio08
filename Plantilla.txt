@@ -1,0 +1,3 @@
+Por el momento no pude probar mucho ambas plantillas, me resulto mas amigable pug,
+aunque ejs tiene una estructura similar al html basico. Aun no puedo elegir una de
+las dos para utilizar, pero por el momento me voy a inclinar por pug.

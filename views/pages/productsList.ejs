@@ -5,22 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Productos</title>
-    <link href="views/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
 </head>
 <body>
     <a href='/' class="btnLink">Cargar Producto Nuevo</a>
     <h1 class='titulo'><%= titulo %></h1>
     <div class='contenedorProductos'>
-            <% productsList.forEach((product) => { %>
-                <div class="producto" id="producto-<%= product.id %>">
-                    <img src="<%= product.thumbnail %>" alt='imagen de producto' class="productoImagen">
-                    <div class="productoTextos">
-                        <p class="productoTitulo"><%= product.title %></p>
-                        <p class="productoPrecio">$ <%= product.price %></p>
-                    </div>
+        <% productsList.forEach((product) => { %>
+            <div class="producto" id="producto-<%= product.id %>">
+                <img src="<%= product.thumbnail %>" alt='imagen de producto' class="productoImagen">
+                <div class="productoTextos">
+                    <p class="productoTitulo"><%= product.title %></p>
+                    <p class="productoPrecio">$ <%= product.price %></p>
                 </div>
-            <% }) %>
+            </div>
+        <% }) %>
     </div>
 </body>
 </html>
