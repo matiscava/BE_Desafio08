@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        style 
+            include ./style.css
+        title Lista de Productos
+    body 
+        a(href='/',class='btnLink')='Cargar Producto Nuevo' 
+        h1(class='titulo')=titulo
+        div(class='contenedorProductos')
+            each product in productsList
+                div(class='producto', id=`producto-${product.id}`)
+                    img(src=product.thumbnail, alt=`imagenProduto-${product.id}`, class='productoImagen')
+                    div(class='productoTextos')
+                        p(class='productoTitulo')= product.title
+                        p(class='productoPrecio')= '$ '+product.price

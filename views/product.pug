@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        style 
+            include ./style.css
+        title Producto
+    body 
+        a(href='/',class='btnLink')='Cargar Producto Nuevo' 
+        h1(class='titulo')=titulo
+        div(class='contenedorProductos')
+            if productsList
+                div(class='producto', id=`producto-${productsList.id}`)
+                    img(src=productsList.thumbnail, alt=`imagenProduto-${productsList.id}`, class='productoImagen')
+                    div(class='productoTextos')
+                        p(class='productoTitulo')= productsList.title
+                        p(class='productoPrecio')= '$ '+productsList.price
+            else 
+                div(class='contenedorNotFound')
+                    p(class='textoNotFound')='No se encontraron productos, ingrese otro id'

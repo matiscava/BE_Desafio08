@@ -13,7 +13,8 @@ module.exports = class ObjetoFS {
         const objeto = await this.getAll()
         const objetoFiltrado = objeto.filter(obj => obj.id === idNum);
         if (objetoFiltrado[0]===undefined) {
-         return {error: 'objeto no encontrado'}
+        //  return {error: 'objeto no encontrado'}
+        return
         }else{
          return objetoFiltrado[0];
         }        

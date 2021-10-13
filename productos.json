@@ -34,5 +34,17 @@
     "price": 500,
     "thumbnail": "https://http2.mlstatic.com/D_NQ_NP_697980-MLA42179185856_062020-O.jpg",
     "id": 6
+  },
+  {
+    "title": "Push Pop",
+    "price": "540",
+    "thumbnail": "https://superonline.ar/wp-content/uploads/2020/09/25007-1.jpg",
+    "id": 7
+  },
+  {
+    "title": "Crazy dips",
+    "price": "420",
+    "thumbnail": "https://m.media-amazon.com/images/I/51ILmlzL-zL.jpg",
+    "id": 8
   }
 ]

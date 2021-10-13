@@ -1,7 +1,7 @@
 body{
     margin:0;
     padding: 0;
-    box-sizing:content-box;
+    box-sizing:border-box;
 }
 
 .titulo{
@@ -12,8 +12,12 @@ body{
 
 .contenedorProductos{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    width: fit-content;
+    margin: 15px;
+    box-shadow: 0 0 0 1px #d3d3bf;
+    padding: 10px;
 }
 .producto{
     background-color: cadetblue;
@@ -46,4 +50,51 @@ body{
     width: 260px;
     display: flex;
     flex-direction: column;
+}
+
+.btnLink{
+    margin: 15px;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #15a3b1;
+    color: white;
+    display: block;
+    width: fit-content;
+    border-radius: 19px;
+    border: 1px solid #15a3b1;
+    transition: 0.3s;
+    font-family: system-ui;
+}
+.btnLink:hover{
+    background-color: white;
+    color: #15a3b1;
+    box-shadow: 0 0 15px #409d83;
+}
+
+.inputForm{
+    margin: 5px 0;
+    width: 400px;
+}
+.btnLink--form{
+    width: fit-content;
+    margin: 5px auto;
+    padding: 6px 13px;
+    background: gray;
+    border-color: gray;
+}
+.btnLink--form:hover{
+    background-color: white;
+    color: gray;
+    box-shadow: 0 0 10px #aab8b4;
+}
+
+.contenedorNotFound{
+    background-color: #ffeebb;
+    padding: 10px;
+}
+.textoNotFound{
+    margin: 5px;
+    color: #775f16;
+    font-weight: 700;
+    font-family: sans-serif;
 }

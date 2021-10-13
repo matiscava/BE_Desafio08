@@ -6,13 +6,15 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         style 
             include ./style.css
-        title Productos
+        title Carga de producto
     body 
-        h1(class='titulo')='Lista de Productos'
-        div(class='contenedorProductos')
-            each product in productsList
-                div(class='producto', id=`producto-${product.id}`)
-                    img(src=product.thumbnail, alt=`imagenProduto-${product.id}`, class='productoImagen')
-                    div(class='productoTextos')
-                        p(class='productoTitulo')= product.title
-                        p(class='productoPrecio')= '$ '+product.price
+        a(href='/productos',class='btnLink')='Ver lista de productos' 
+        h1(class='titulo')="Ingrese Producto"
+        form(action="/productos", method="post" class="contenedorProductos") 
+            label(for="title")='Nombre del Producto:' 
+            input(type="text", name="title", class='inputForm', placeholder="Ingrese el nombre del producto")
+            label(for="price")='Precio del Producto:' 
+            input(type="number", name="price", class='inputForm', placeholder="Ingrese el precio del producto")
+            label(for="thumbnail")='URL a la imagen del Producto:' 
+            input(type="text", name="thumbnail", class='inputForm', placeholder="Ingrese el link de la imagen del producto")
+            input(type="submit", value="Cargar", class='btnLink btnLink--form')

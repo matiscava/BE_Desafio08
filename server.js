@@ -12,16 +12,18 @@ const PORT = 8080;
 server.use(express.json());
 server.use(express.urlencoded({extended:true}));
 
-server.set('views', './views');
-server.set('view engine', 'pug');
-server.use(express.static('public'));
+server.set('views', __dirname+'/views');
+// server.set('view engine', 'pug');
+server.set('view engine', 'ejs');
+
+server.use(express.static(__dirname+'public'));
 
 
-server.get('/', (req,res)=>{   
-    res.send('Bienvenido')
-});
+// server.get('/', (req,res)=>{   
+//     res.send('Bienvenido')
+// });
 
-server.use('/productos', planillasRouter);
+server.use('/', planillasRouter);
 
 server.use('/api/productos', productosRouter);
 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga de producto</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <a href='/productos' class="btnLink">Ver lista de productos</a>
+    <h1 class='titulo'>Ingrese Producto Nuevo</h1>
+    <form action='/productos' method='post' class="contenedorProductos">
+        <label for='title'>Nombre de Porducto:</label>
+        <input type="text" name="title" class='inputForm' placeholder="Ingrese el nombre del producto">
+        <label for='price'>Precio del Producto:</label>
+        <input type="number" name="price" class='inputForm' placeholder="Ingrese el precio del producto">
+        <label for='thumbnail'>URL a la imagen del Producto:</label>
+        <input type="text" name="thumbnail" class='inputForm' placeholder="Ingrese el link de la imagen del producto">
+        <input type="submit" value="Cargar" class='btnLink btnLink--form'>        
+    </form>    
+</body>
+</html>
